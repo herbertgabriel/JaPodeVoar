@@ -35,7 +35,7 @@ const translations = {
     'en': {
         'inicio': 'Home',
         'database': 'Database',
-        'graficos': 'Charts',
+        'graficos': 'Dashboards',
         'previsao': 'Delay Prediction',
         'about': 'About',
         'resumo': 'Summary',
