@@ -73,7 +73,7 @@ O modelo utiliza as seguintes colunas na base de dados de voos:
 
 ## Autores
 
-- **Herbert** 
+- **Herbert Gabriel** 
 - **Everlyn Marques** 
 - **Laryssa Thaynna**
 - **Felipe Vinicius**  
