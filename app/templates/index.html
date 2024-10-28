@@ -2,24 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Previsão de Atraso de Voo</title>
+    <title>Já pode voar?</title>
+    <link rel="stylesheet" href="../static/css/globals.css">
 </head>
 <body>
-    <h1>Previsão de Atraso de Voo</h1>
-    <form method="post">
-        <label>Duração do Voo:</label>
-        <input type="number" name="flight_duration" required><br>
-        
-        <label>Aeroporto de Origem:</label>
-        <input type="text" name="airport_from" required><br>
-
-        <label>Condições Climáticas:</label>
-        <input type="text" name="weather_conditions" required><br>
-
-        <button type="submit">Prever</button>
-    </form>
-    {% if prediction %}
-        <h2>Resultado da Previsão: {{ prediction }}</h2>
-    {% endif %}
+    <aside class="navbar">
+        <nav>
+            <ul>
+                <div class="container-logo"><img src="../static/image/logo.png" alt="Logo"></div>
+                <li><a href="#inicio" data-translate="inicio">Home</a></li>
+                <li><a href="#database" data-translate="database">Database</a></li>
+                <li><a href="#graficos" data-translate="graficos">Charts</a></li>
+                <li><a href="#previsao" data-translate="previsao">Delay Prediction</a></li>
+                <li><a href="#about" data-translate="about">About</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-buttons">
+            <button id="toggle-dark-mode">🌙</button>
+            <button id="toggle-language">🇧🇷</button>
+        </div>
+    </aside>
+    <main>
+        <section id="inicio">
+            <h1 data-translate="resumo">Summary</h1>
+            <p data-translate="resumo-text">The "Airlines Dataset to Predict a Delay" dataset provides information about flights, allowing for the analysis and prediction of delays. The dataset contains nine columns, including flight identifiers, airlines, origin and destination airports, day of the week, flight time, duration, and a delay indicator (0 for no delay and 1 for delay).</p>
+            <p data-translate="resumo-text-pt1">O conjunto de dados <strong>"Airlines Dataset to Predict a Delay"</strong> oferece informações sobre voos, permitindo a análise e previsão de atrasos. A base contém nove colunas, incluindo identificadores de voos, companhias aéreas, aeroportos de origem e destino, dia da semana, horário do voo, duração e um indicador de atraso (<strong>0 para sem atraso</strong> e <strong>1 para com atraso</strong>).</p>
+            <p data-translate="resumo-text-pt2">Durante a análise exploratória, foram identificadas algumas limitações e desafios. A ausência de informações sobre a duração do atraso impede a identificação de padrões mais detalhados. A categorização binária da coluna <strong>Delay</strong> pode restringir as técnicas estatísticas aplicáveis, levando a interpretações equivocadas ao tratar pequenos e grandes atrasos como iguais. A coluna <strong>Length</strong> gerou confusão inicial sobre se se referia ao tempo de atraso ou à duração do voo; no entanto, a maioria dos voos com <strong>delay igual a 0</strong> apresenta valores diferentes de zero, sugerindo que a coluna realmente representa a duração do voo.</p>
+            <p data-translate="resumo-text-pt3">Foram observadas ocorrências atípicas, com apenas quatro registros mostrando <strong>Length igual a zero</strong>, indicando que esses casos são exceções. A alta diversidade nas colunas <strong>AirportFrom</strong>, <strong>AirportTo</strong> e <strong>Flight</strong> dificultou a análise e interpretação dos resultados, tornando os padrões menos evidentes. A subamostragem de companhias aéreas com mais de 10.000 registros foi necessária para garantir a integridade dos dados e evitar distorções nos resultados.</p>
+            <p data-translate="resumo-text-pt4">Além disso, notou-se um desbalanceamento nas ocorrências das companhias aéreas, onde algumas têm muitos mais registros do que outras. Isso pode distorcer as análises e previsões, justificando a necessidade de balanceamento. O desbalanceamento também foi encontrado na coluna <strong>Delay</strong>, com <strong>55% dos voos sem atraso</strong> e <strong>45% com atraso</strong>. Para melhorar o desempenho do modelo preditivo, é importante balancear as classes.</p>
+            <p data-translate="resumo-text-pt5">Em resumo, a análise exploratória destacou a complexidade da previsão de atrasos de voos, revelando desafios como a ambiguidade de algumas colunas, a presença de outliers e a necessidade de balanceamento nas classes de dados. O próximo passo envolve a aplicação de técnicas de modelagem que considerem essas questões para melhorar a precisão das previsões de atraso nos voos.</p>
+            <p data-translate="resumo-text-pt6">Aqui está o link para o conjunto de dados no Kaggle: <a href="https://www.kaggle.com/datasets/jimschacko/airlines-dataset-to-predict-a-delay">Airlines Dataset to Predict a Delay</a></p>
+        </section>
+        <section id="database">
+            <h1 data-translate="database-title">Understanding the Database</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th data-translate="coluna">Column</th>
+                        <th data-translate="descricao">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-translate="flight">Flight Identifier</td>
+                        <td data-translate="airline">Airline</td>
+                    </tr>
+                    <tr>
+                        <td data-translate="airportFrom">Origin Airport</td>
+                        <td data-translate="airportTo">Destination Airport</td>
+                    </tr>
+                    <tr>
+                        <td data-translate="dayOfWeek">Day of the Week</td>
+                        <td data-translate="time">Flight Time</td>
+                    </tr>
+                    <tr>
+                        <td data-translate="length">Flight Duration</td>
+                        <td data-translate="delay">Delay Indicator (0 for no delay and 1 for delay)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="buttons">
+                <button data-translate="num-linhas-colunas">Number of Rows and Columns</button>
+                <button data-translate="estrutura-dataframe">Dataframe Structure</button>
+                <button data-translate="tipos-dados-coluna">Data Types of Each Column</button>
+                <button data-translate="verificar-linhas-duplicadas">Check for Duplicate Rows</button>
+                <button data-translate="estatisticas-colunas">Column Statistics</button>
+                <button data-translate="balanceamento-classes">Class Balance</button>
+                <button data-translate="mostrar-tratamento-dados">Show Data Treatment</button>
+            </div>
+        </section>
+    </main>
+    <script src="../static/js/dark-mode.js"></script>
+    <script src="../static/js/language-toggle.js"></script>
 </body>
 </html>

@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    width: 15rem; 
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar nav ul li {
+    margin: 1rem 0;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container-logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.container-logo img {
+    max-width: 100%; /* Aumentar o tamanho da logo */
+    height: auto;
+}
+
+main {
+    padding: 20px;
+    width: 100%;
+    overflow-y: auto; /* Permitir rolagem vertical */
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.toggle-buttons button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+/* Media query para tornar a barra de navegação responsiva */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .navbar nav ul li {
+        margin: 5px 0;
+    }
+
+    .container-logo img {
+        max-width: 50%; /* Ajustar o tamanho da logo para telas menores */
+    }
+
+    .toggle-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toggle-buttons button {
+        margin: 5px 0;
+    }
+}
+
+/* Modo escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode button {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode button:hover {
+    background-color: #333;
+}
