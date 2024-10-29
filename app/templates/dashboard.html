@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Já pode voar?</title>
     <link rel="stylesheet" href="../static/css/globals.css">
+    <link rel="stylesheet" href="../static/css/dashboards.css">
 </head>
 <body>
     <aside class="navbar">
@@ -23,9 +24,19 @@
         </div>
     </aside>
     <main>
-        
+        <div class="grafico-container">
+            <select name="grafico" id="grafico-select" class="grafico-select">
+                <option value="Heartmap">Heartmap</option>
+                <option value="Voosatrasados">Quantidade de atrasos</option>
+                <option value="Vooscompanhias">Voos por Companhias</option>
+                <option value="Voosssemana">Voos por semana</option>
+                <option value="Vooscompanhia">Atrasos por companhia</option>
+                <option value="Voosatrasadossemana">Voos atrasados por semana</option>
+            </select>
+        </div>
     </main>
     <script src="../static/js/dark-mode.js"></script>
     <script src="../static/js/language-toggle.js"></script>
+    <script src="../static/js/grafico.js"></script>
 </body>
 </html>
