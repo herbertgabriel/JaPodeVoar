@@ -13,10 +13,8 @@
             <ul>
                 <div class="container-logo"><img src="../static/image/logo.png" alt="Logo"></div>
                 <li><a href="/" data-translate="inicio">Home</a></li>
-                <li><a href="/database" data-translate="database">Database</a></li>
                 <li><a href="/dashboard" data-translate="graficos">Dashboards</a></li>
                 <li><a href="/predictor" data-translate="previsao">Delay Prediction</a></li>
-                <li><a href="/about" data-translate="about">About</a></li>
             </ul>
         </nav>
         <div class="toggle-buttons">
@@ -28,24 +26,7 @@
         <form id="prediction-form" class="prediction-form">
             <label for="linha-aerea">Linha Aérea:</label>
             <select name="linha-aerea" id="linha-aerea">
-                <option value="WN">WN</option>
-                <option value="DL">DL</option>
-                <option value="OO">OO</option>
-                <option value="XE">XE</option>
-                <option value="EV">EV</option>
-                <option value="AA">AA</option>
-                <option value="MQ">MQ</option>
-                <option value="US">US</option>
-                <option value="UA">UA</option>
-                <option value="9E">9E</option>
-                <option value="FL">FL</option>
-                <option value="CO">CO</option>
-                <option value="OH">OH</option>
-                <option value="B6">B6</option>
-                <option value="YV">YV</option>
-                <option value="AS">AS</option>
-                <option value="F9">F9</option>
-                <option value="HA">HA</option>
+                <!-- Opções serão adicionadas dinamicamente -->
             </select>
 
             <label for="aeroporto-origem">Aeroporto de Origem:</label>
@@ -60,13 +41,13 @@
 
             <label for="dia-semana">Dia da Semana:</label>
             <select name="dia-semana" id="dia-semana">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
+                <option value="1">Domingo</option>
+                <option value="2">Segunda-feira</option>
+                <option value="3">Terça-feira</option>
+                <option value="4">Quarta-feira</option>
+                <option value="5">Quinta-feira</option>
+                <option value="6">Sexta-feira</option>
+                <option value="7">Sabado</option>
             </select>
 
             <label for="horario-voo">Horário do Voo (em minutos):</label>
@@ -74,11 +55,6 @@
 
             <label for="duracao-voo">Tempo de Duração do Voo (em minutos):</label>
             <input type="number" name="duracao-voo" id="duracao-voo" min="0">
-
-            <label for="flight-modelo">Flight (Modelo de Avião):</label>
-            <select name="flight-modelo" id="flight-modelo">
-                <!-- Opções serão adicionadas dinamicamente -->
-            </select>
 
             <button type="submit">Verificar Atraso</button>
         </form>

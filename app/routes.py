@@ -19,8 +19,8 @@ else:
 @main.route('/get_airports_and_flights')
 def get_airports_and_flights():
     aeroportos = dados['AirportFrom'].unique().tolist() + dados['AirportTo'].unique().tolist()
-    flights = dados['Flight'].unique().tolist()
-    return jsonify({'aeroportos': sorted(set(aeroportos)), 'flights': sorted(flights)})
+    airlines = dados['Airline'].unique().tolist()
+    return jsonify({'aeroportos': sorted(set(aeroportos)), 'airlines': sorted(airlines)})
 
 @main.route('/')
 def index():
