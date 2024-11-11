@@ -5,7 +5,7 @@ Este projeto tem como objetivo prever atrasos de voos utilizando técnicas de Ma
 ## Estrutura do Projeto
 
 ```
-flight_delay_prediction/
+japodevoar/
 ├── app/
 │   ├── __init__.py
 │   ├── models/
@@ -17,6 +17,10 @@ flight_delay_prediction/
 │   ├── routes.py               # Define as rotas da aplicação
 │   ├── utils.py                # Funções auxiliares para pré-processamento e outras tarefas
 │   ├── config.py               # Configurações gerais (como variáveis de ambiente)
+├── tests/                      # Pasta para testes pytest
+│   ├── test_routes.py          # Testes para routes.py
+│   ├── test_utils.py           # Testes para utils.py
+│   └── ...   
 ├── data/                       # Dados brutos ou pré-processados
 │   └── flight_data.csv
 ├── models/                     # Modelos de machine learning e notebooks de treino
