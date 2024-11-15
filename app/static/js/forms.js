@@ -1,4 +1,3 @@
-// static/js/forms.js
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/get_airports_and_flights')
         .then(response => response.json())
@@ -6,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const aeroportoOrigemSelect = document.getElementById('aeroporto-origem');
             const aeroportoDestinoSelect = document.getElementById('aeroporto-destino');
             const linhaAereaSelect = document.getElementById('linha-aerea');
+            const aeronaveSelect = document.getElementById('aeronave');
 
             data.aeroportos.forEach(aeroporto => {
                 const optionOrigem = document.createElement('option');
@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 optionAirline.value = airline;
                 optionAirline.innerText = airline;
                 linhaAereaSelect.appendChild(optionAirline);
+            });
+
+            data.flights.forEach(flight => {
+                const option = document.createElement('option');
+                option.value = flight;
+                option.textContent = flight;
+                aeronaveSelect.appendChild(option);
             });
         })
         .catch(error => console.error('Error:', error));

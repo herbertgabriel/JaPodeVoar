@@ -22,18 +22,19 @@
         </div>
     </aside>
     <main>
-        <form id="prediction-form" class="prediction-form">
-            <!-- Adicione aqui os selects dinâmicos conforme necessário -->
-            <button type="button" id="check-delay">Verificar Atraso</button>
-        </form>
         <section id="result-section" class="result-section">
             <h1 id="result-title" class="result-title">Resultado</h1>
-            <p id="result-text" class="result-text">Aguardando verificação...</p>
+            <p id="result-text" class="result-text">
+                {% if request.args.get('prediction') == '1' %}
+                    O voo está previsto para atrasar.
+                {% else %}
+                    O voo está previsto para não atrasar.
+                {% endif %}
+            </p>
         </section>
     </main>
     <script src="../static/js/dark-mode.js"></script>
     <script src="../static/js/language-toggle.js"></script>
-    <script src="../static/js/form.js"></script>
     <script src="../static/js/results.js"></script>
 </body>
 </html>

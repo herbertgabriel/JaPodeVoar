@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Previsão de Atraso</title>
-        <link rel="stylesheet" href="../static/css/forms.css">
-
+    <link rel="stylesheet" href="../static/css/forms.css">
     <link rel="stylesheet" href="../static/css/globals.css">
 </head>
 <body>
@@ -23,9 +22,14 @@
         </div>
     </aside>
     <main>
-        <form id="prediction-form" class="prediction-form">
+        <form id="prediction-form" class="prediction-form" method="POST" action="/predict_delay">
             <label for="linha-aerea">Linha Aérea:</label>
             <select name="linha-aerea" id="linha-aerea">
+                <!-- Opções serão adicionadas dinamicamente -->
+            </select>
+
+            <label for="aeronave">Aeronave</label>
+            <select name="aeronave" id="aeronave">
                 <!-- Opções serão adicionadas dinamicamente -->
             </select>
 
