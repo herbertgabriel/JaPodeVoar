@@ -30,7 +30,22 @@ const translations = {
         'verificar-linhas-duplicadas': 'Verificar linhas duplicadas',
         'estatisticas-colunas': 'Estatísticas das colunas',
         'balanceamento-classes': 'Balanceamento de classes',
-        'mostrar-tratamento-dados': 'Mostrar tratamento de dados'
+        'mostrar-tratamento-dados': 'Mostrar tratamento de dados',
+        'linha-aerea': 'Linha Aérea:',
+        'aeronave': 'Aeronave',
+        'aeroporto-origem': 'Aeroporto de Origem:',
+        'aeroporto-destino': 'Aeroporto de Destino:',
+        'dia-semana': 'Dia da Semana:',
+        'domingo': 'Domingo',
+        'segunda-feira': 'Segunda-feira',
+        'terca-feira': 'Terça-feira',
+        'quarta-feira': 'Quarta-feira',
+        'quinta-feira': 'Quinta-feira',
+        'sexta-feira': 'Sexta-feira',
+        'sabado': 'Sábado',
+        'horario-voo': 'Horário do Voo (em minutos):',
+        'duracao-voo': 'Tempo de Duração do Voo (em minutos):',
+        'verificar-atraso': 'Verificar Atraso'
     },
     'en': {
         'inicio': 'Home',
@@ -63,7 +78,22 @@ const translations = {
         'verificar-linhas-duplicadas': 'Check for Duplicate Rows',
         'estatisticas-colunas': 'Column Statistics',
         'balanceamento-classes': 'Class Balance',
-        'mostrar-tratamento-dados': 'Show Data Treatment'
+        'mostrar-tratamento-dados': 'Show Data Treatment',
+        'linha-aerea': 'Airline:',
+        'aeronave': 'Aircraft',
+        'aeroporto-origem': 'Origin Airport:',
+        'aeroporto-destino': 'Destination Airport:',
+        'dia-semana': 'Day of the Week:',
+        'domingo': 'Sunday',
+        'segunda-feira': 'Monday',
+        'terca-feira': 'Tuesday',
+        'quarta-feira': 'Wednesday',
+        'quinta-feira': 'Thursday',
+        'sexta-feira': 'Friday',
+        'sabado': 'Saturday',
+        'horario-voo': 'Flight Time (in minutes):',
+        'duracao-voo': 'Flight Duration (in minutes):',
+        'verificar-atraso': 'Check Delay'
     }
 };
 

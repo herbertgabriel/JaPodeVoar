@@ -37,8 +37,8 @@ main {
     font-weight: bold;
 }
 
-.prediction-form select,
-.prediction-form input[type="number"] {
+.prediction-form select
+ {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -59,4 +59,12 @@ main {
 
 .prediction-form button:hover {
     background-color: #555;
+}
+
+.prediction-form input[type="number"] {
+    width: 96.5%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

@@ -23,44 +23,44 @@
     </aside>
     <main>
         <form id="prediction-form" class="prediction-form" method="POST" action="/predict_delay">
-            <label for="linha-aerea">Linha Aérea:</label>
-            <select name="linha-aerea" id="linha-aerea">
+            <label for="linha-aerea" data-translate="linha-aerea">Linha Aérea:</label>
+            <select name="linha-aerea" id="linha-aerea" required>
                 <!-- Opções serão adicionadas dinamicamente -->
             </select>
 
-            <label for="aeronave">Aeronave</label>
-            <select name="aeronave" id="aeronave">
+            <label for="aeronave" data-translate="aeronave">Aeronave</label>
+            <select name="aeronave" id="aeronave" required>
                 <!-- Opções serão adicionadas dinamicamente -->
             </select>
 
-            <label for="aeroporto-origem">Aeroporto de Origem:</label>
-            <select name="aeroporto-origem" id="aeroporto-origem">
+            <label for="aeroporto-origem" data-translate="aeroporto-origem">Aeroporto de Origem:</label>
+            <select name="aeroporto-origem" id="aeroporto-origem" required>
                 <!-- Opções serão adicionadas dinamicamente -->
             </select>
 
-            <label for="aeroporto-destino">Aeroporto de Destino:</label>
-            <select name="aeroporto-destino" id="aeroporto-destino">
+            <label for="aeroporto-destino" data-translate="aeroporto-destino">Aeroporto de Destino:</label>
+            <select name="aeroporto-destino" id="aeroporto-destino" required>
                 <!-- Opções serão adicionadas dinamicamente -->
             </select>
 
-            <label for="dia-semana">Dia da Semana:</label>
-            <select name="dia-semana" id="dia-semana">
-                <option value="1">Domingo</option>
-                <option value="2">Segunda-feira</option>
-                <option value="3">Terça-feira</option>
-                <option value="4">Quarta-feira</option>
-                <option value="5">Quinta-feira</option>
-                <option value="6">Sexta-feira</option>
-                <option value="7">Sabado</option>
+            <label for="dia-semana" data-translate="dia-semana">Dia da Semana:</label>
+            <select name="dia-semana" id="dia-semana" required>
+                <option value="1" data-translate="domingo">Domingo</option>
+                <option value="2" data-translate="segunda-feira">Segunda-feira</option>
+                <option value="3" data-translate="terca-feira">Terça-feira</option>
+                <option value="4" data-translate="quarta-feira">Quarta-feira</option>
+                <option value="5" data-translate="quinta-feira">Quinta-feira</option>
+                <option value="6" data-translate="sexta-feira">Sexta-feira</option>
+                <option value="7" data-translate="sabado">Sábado</option>
             </select>
 
-            <label for="horario-voo">Horário do Voo (em minutos):</label>
-            <input type="number" name="horario-voo" id="horario-voo" min="0" max="1440">
+            <label for="horario-voo" data-translate="horario-voo">Horário do Voo (em minutos):</label>
+            <input type="number" name="horario-voo" id="horario-voo" min="0" max="1440" required>
 
-            <label for="duracao-voo">Tempo de Duração do Voo (em minutos):</label>
-            <input type="number" name="duracao-voo" id="duracao-voo" min="0">
+            <label for="duracao-voo" data-translate="duracao-voo">Tempo de Duração do Voo (em minutos):</label>
+            <input type="number" name="duracao-voo" id="duracao-voo" min="0" required>
 
-            <button type="submit">Verificar Atraso</button>
+            <button type="submit" data-translate="verificar-atraso">Verificar Atraso</button>
         </form>
     </main>
     <script src="../static/js/dark-mode.js"></script>
