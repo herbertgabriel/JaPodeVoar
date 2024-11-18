@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import joblib
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+from flasgger import swag_from
 
 main = Blueprint('main', __name__)
 
@@ -34,6 +35,30 @@ else:
     print("Modelo ou encoders não encontrados.")
 
 @main.route('/get_airports_and_flights')
+@swag_from({
+    'responses': {
+        200: {
+            'description': 'Lista de aeroportos, linhas aéreas e voos',
+            'schema': {
+                'type': 'object',
+                'properties': {
+                    'aeroportos': {
+                        'type': 'array',
+                        'items': {'type': 'string'}
+                    },
+                    'airlines': {
+                        'type': 'array',
+                        'items': {'type': 'string'}
+                    },
+                    'flights': {
+                        'type': 'array',
+                        'items': {'type': 'string'}
+                    }
+                }
+            }
+        }
+    }
+})
 def get_airports_and_flights():
     aeroportos = dados['AirportFrom'].unique().tolist() + dados['AirportTo'].unique().tolist()
     airlines = dados['Airline'].unique().tolist()
@@ -57,6 +82,64 @@ def results():
     return render_template('results.html')
 
 @main.route('/predict_delay', methods=['POST'])
+@swag_from({
+    'parameters': [
+        {
+            'name': 'linha-aerea',
+            'in': 'formData',
+            'type': 'string',
+            'required': True,
+            'description': 'Nome da linha aérea'
+        },
+        {
+            'name': 'aeroporto-origem',
+            'in': 'formData',
+            'type': 'string',
+            'required': True,
+            'description': 'Aeroporto de origem'
+        },
+        {
+            'name': 'aeroporto-destino',
+            'in': 'formData',
+            'type': 'string',
+            'required': True,
+            'description': 'Aeroporto de destino'
+        },
+        {
+            'name': 'dia-semana',
+            'in': 'formData',
+            'type': 'integer',
+            'required': True,
+            'description': 'Dia da semana'
+        },
+        {
+            'name': 'horario-voo',
+            'in': 'formData',
+            'type': 'integer',
+            'required': True,
+            'description': 'Horário do voo'
+        },
+        {
+            'name': 'duracao-voo',
+            'in': 'formData',
+            'type': 'integer',
+            'required': True,
+            'description': 'Duração do voo'
+        },
+        {
+            'name': 'aeronave',
+            'in': 'formData',
+            'type': 'string',
+            'required': True,
+            'description': 'Número do voo'
+        }
+    ],
+    'responses': {
+        302: {
+            'description': 'Redireciona para a página de resultados com a previsão'
+        }
+    }
+})
 def predict_delay():
     data = request.form
     airline = data['linha-aerea']
@@ -90,3 +173,7 @@ def predict_delay():
 
     # Redirecionar para a página de resultados com a previsão
     return redirect(url_for('main.results', prediction=prediction))
+
+@main.route('/apidocs')
+def apidocs():
+    return redirect('/apidocs/')
