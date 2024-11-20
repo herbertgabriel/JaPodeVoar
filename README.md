@@ -46,11 +46,7 @@ JaPodeVoar/
 
 ## Pré-requisitos
 
-Antes de executar o projeto, você precisa ter o Python 3.x instalado em sua máquina. Além disso, instale as dependências necessárias com o seguinte comando:
-
-```bash
-pip install -r requirements.txt
-```
+Antes de executar o projeto, você precisa ter o Python 3.x instalado em sua máquina.
 
 ## Como Usar
 
@@ -61,7 +57,7 @@ pip install -r requirements.txt
    python -m venv venv   
    ```
 
-   No Windows:
+   Ativar no Windows:
    ```bash
    .\venv\Scripts\activate   
    ```
@@ -70,7 +66,14 @@ pip install -r requirements.txt
    source venv/bin/activate   
    ```
 
-2. **Inicie o Servidor Flask**:
+2. **Instalando as Dependências**:
+   Instale as dependências necessárias com o seguinte comando:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Inicie o Servidor Flask**:
    Execute o arquivo `app.py` para iniciar o servidor:
 
    ```bash
@@ -79,7 +82,7 @@ pip install -r requirements.txt
 
    O aplicativo estará disponível em `http://127.0.0.1:5000`.
 
-3. **Faça Previsões**:
+4. **Faça Previsões**:
    Acesse o aplicativo no seu navegador e preencha o formulário com os dados do voo. O modelo retornará a previsão de atraso.
 
 ## Estrutura dos Dados
