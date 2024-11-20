@@ -5,30 +5,43 @@ Este projeto tem como objetivo prever atrasos de voos utilizando técnicas de Ma
 ## Estrutura do Projeto
 
 ```
-japodevoar/
+JaPodeVoar/
+├── .gitignore
+├── .vscode/
+│   └── settings.json
 ├── app/
 │   ├── __init__.py
 │   ├── models/
-│   │   ├── model.pkl           # Modelo de machine learning treinado (salvo com pickle)
-│   │   └── model.py            # Script para carregar o modelo e fazer previsões
-│   ├── static/                 # Arquivos estáticos (CSS, JavaScript, etc.)
+│   │   ├── eda.ipynb
+│   │   ├── le_airline.pkl
+│   │   ├── le_airportfrom.pkl
+│   │   ├── le_airportto.pkl
+│   │   ├── mlp_model.pkl
+│   │   ├── scaler.pkl
+│   │   ├── train_model.ipynb
+│   ├── routes.py
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── dashboards.css
+│   │   │   ├── forms.css
+│   │   │   ├── globals.css
+│   │   ├── image/
+│   │   ├── js/
 │   ├── templates/
-│   │   └── index.html          # Página inicial com formulário de entrada para previsões
-│   ├── routes.py               # Define as rotas da aplicação
-│   ├── utils.py                # Funções auxiliares para pré-processamento e outras tarefas
-│   ├── config.py               # Configurações gerais (como variáveis de ambiente)
-├── tests/                      # Pasta para testes pytest
-│   ├── test_routes.py          # Testes para routes.py
-│   ├── test_utils.py           # Testes para utils.py
-│   └── ...   
-├── data/                       # Dados brutos ou pré-processados
-│   └── flight_data.csv
-├── models/                     # Modelos de machine learning e notebooks de treino
-│   ├── train_model.py          # Script para treinar e salvar o modelo
-│   └── train_model.ipynb       # Notebook para treinar e salvar o modelo (opcional)
-├── app.py                      # Arquivo principal para rodar o aplicativo Flask
-├── requirements.txt            # Dependências do projeto (Flask, Scikit-Learn, Pandas, etc.)
-└── README.md                   # Documentação do projeto
+│   │   ├── dashboard.html
+│   │   ├── index.html
+│   │   ├── predictor.html
+│   │   ├── results.html
+│   ├── utils.py
+│   ├── config.py
+├── data/
+│   ├── Airlines.csv
+│   ├── dados_balanceados.csv
+├── tests/
+│   ├── test_routes.py
+├── app.py
+├── requirements.txt
+└── README.md
 ```
 
 ## Pré-requisitos
@@ -41,14 +54,21 @@ pip install -r requirements.txt
 
 ## Como Usar
 
-1. **Treine o Modelo**:
-   Para treinar o modelo de previsão, execute o script `train_model.py`:
+1. **Crie o Ambiente Virtual**:
+   No terminal, navegue até o diretório do projeto e execute o seguinte comando para criar um ambiente virtual:
 
    ```bash
-   python models/train_model.py
+   python -m venv venv   
    ```
 
-   Isso criará e salvará o modelo treinado em `app/models/model.pkl`.
+   No Windows:
+   ```bash
+   .\venv\Scripts\activate   
+   ```
+   No macOS e Linux:
+   ```bash
+   source venv/bin/activate   
+   ```
 
 2. **Inicie o Servidor Flask**:
    Execute o arquivo `app.py` para iniciar o servidor:
