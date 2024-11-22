@@ -1,11 +1,10 @@
 import pytest
 from flask import Flask
 from flask_testing import TestCase
-from app import create_app  # Supondo que sua aplicação Flask esteja no arquivo app.py
+from app.routes import create_app  
 
 class TestRoutes(TestCase):
     def create_app(self):
-        # Configurações para o ambiente de teste
         app = create_app()
         app.config['TESTING'] = True
         return app
@@ -40,15 +39,15 @@ class TestRoutes(TestCase):
 
     def test_predict_delay_route(self):
         response = self.client.post('/predict_delay', data={
-            'linha-aerea': 'Airline1',
-            'aeroporto-origem': 'Airport1',
-            'aeroporto-destino': 'Airport2',
+            'linha-aerea': '9E',
+            'aeroporto-origem': 'ADQ',
+            'aeroporto-destino': 'ABE',
             'dia-semana': 1,
             'horario-voo': 10,
             'duracao-voo': 120,
-            'aeronave': 'Flight1'
+            'aeronave': '1'
         })
-        self.assertEqual(response.status_code, 302)  # Redirecionamento esperado
+        self.assertEqual(response.status_code, 302) 
 
 if __name__ == '__main__':
     pytest.main()

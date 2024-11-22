@@ -102,38 +102,6 @@ table th {
     background-color: #f9f9f9; 
 }
 
-/* Media query para tornar a barra de navegação responsiva */
-@media (max-width: 768px) {
-    .navbar {
-        width: 100%;
-        height: auto;
-        padding: 10px;
-    }
-
-    .navbar nav ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .navbar nav ul li {
-        margin: 5px 0;
-    }
-
-    .container-logo img {
-        max-width: 50%; /* Ajustar o tamanho da logo para telas menores */
-    }
-
-    .toggle-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .toggle-buttons button {
-        margin: 5px 0;
-    }
-}
-
 /* Modo escuro */
 body.dark-mode {
     background-color: #121212;
@@ -153,6 +121,6 @@ body.dark-mode button:hover {
     background-color: #333;
 }
 
-body.dark-mode label{
+body.dark-mode label, th{
     color: black;
 }

@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, render_template, request, redirect, url_for
+from flask import Blueprint, Flask, jsonify, render_template, request, redirect, url_for
 import pandas as pd
 import os
 import joblib
@@ -177,3 +177,8 @@ def predict_delay():
 @main.route('/apidocs')
 def apidocs():
     return redirect('/apidocs/')
+
+def create_app():
+    app = Flask(__name__)
+    app.register_blueprint(main)
+    return app
