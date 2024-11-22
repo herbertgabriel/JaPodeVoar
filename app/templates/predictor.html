@@ -11,9 +11,9 @@
         <nav>
             <ul>
                 <div class="container-logo"><img src="../static/image/logo.png" alt="Logo"></div>
-                <li><a href="/" data-translate="inicio">Home</a></li>
-                <li><a href="/dashboard" data-translate="graficos">Dashboards</a></li>
-                <li><a href="/predictor" data-translate="previsao">Delay Prediction</a></li>
+                <li><a href="/" data-translate="home">Home</a></li>
+                <li><a href="/dashboard" data-translate="dashboards">Dashboards</a></li>
+                <li><a href="/predictor" data-translate="prediction">Delay Prediction</a></li>
             </ul>
         </nav>
         <div class="toggle-buttons">
@@ -54,13 +54,13 @@
                 <option value="7" data-translate="sabado">Sábado</option>
             </select>
 
-            <label for="horario-voo" data-translate="horario-voo">Horário do Voo (em minutos):</label>
-            <input type="number" name="horario-voo" id="horario-voo" min="0" max="1440" required>
+            <label for="horario-voo" data-translate="horario-voo">Flight Time (Hours:Minutes):</label>
+            <input type="time" name="horario-voo" id="horario-voo" required>
 
-            <label for="duracao-voo" data-translate="duracao-voo">Tempo de Duração do Voo (em minutos):</label>
-            <input type="number" name="duracao-voo" id="duracao-voo" min="0" required>
+            <label for="duracao-voo" data-translate="duracao-voo">Flight Duration (Hours:Minutes):</label>
+            <input type="time" name="duracao-voo" id="duracao-voo" required>
 
-            <button type="submit" data-translate="verificar-atraso">Verificar Atraso</button>
+            <button type="submit" data-translate="verificar-atraso">Check Delay</button>
         </form>
         <div id="error-message" style="display: none; color: red;"></div>
         

@@ -146,8 +146,8 @@ def predict_delay():
     airport_from = data['aeroporto-origem']
     airport_to = data['aeroporto-destino']
     day_of_week = int(data['dia-semana'])
-    time = int(data['horario-voo'])
-    length = int(data['duracao-voo'])
+    time = sum(int(x) * 60 ** i for i, x in enumerate(data['horario-voo'].split(":")[::-1]))
+    length = sum(int(x) * 60 ** i for i, x in enumerate(data['duracao-voo'].split(":")[::-1]))
     flight_number = data['aeronave']
 
     # Criar um DataFrame com os dados do formulário

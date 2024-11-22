@@ -10,9 +10,9 @@
         <nav>
             <ul>
                 <div class="container-logo"><img src="../static/image/logo.png" alt="Logo"></div>
-                <li><a href="/" data-translate="inicio">Home</a></li>
-                <li><a href="/dashboard" data-translate="graficos">Dashboards</a></li>
-                <li><a href="/predictor" data-translate="previsao">Delay Prediction</a></li>
+                <li><a href="/" data-translate="home">Home</a></li>
+                <li><a href="/dashboard" data-translate="dashboards">Dashboards</a></li>
+                <li><a href="/predictor" data-translate="prediction">Delay Prediction</a></li>
             </ul>
         </nav>
         <div class="toggle-buttons">
@@ -26,55 +26,54 @@
             <table>
                 <thead>
                     <tr>
-                        <th data-translate="coluna">Column</th>
-                        <th data-translate="descricao">Description</th>
+                        <th data-translate="column">Column</th>
+                        <th data-translate="description">Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td data-translate="airline">Airline</td>
-                        <td data-translate="ariline-description">Nome abreviado de diferentes companhias aéreas comerciais</td>
+                        <td data-translate="airline-description">Abbreviated name of different commercial airlines</td>
                     </tr>
                     <tr>
                         <td data-translate="flight">Flight</td>
-                        <td data-translate="airportTo"> Número que representa a aeronave que realizou o voo</td>
+                        <td data-translate="flight-description">Number representing the aircraft that performed the flight</td>
                     </tr>
                     <tr>
                         <td data-translate="airportFrom">AirportFrom</td>
-                        <td data-translate="airportTo">Sigla do aeroporto de origem do voo.</td>
+                        <td data-translate="airportFrom-description">Code of the airport of origin of the flight</td>
                     </tr>
                     <tr>
-                        <td data-translate="airportFrom">AirportTo</td>
-                        <td data-translate="airportTo">Sigla do aeroporto de destino do voo.</td>
+                        <td data-translate="airportTo">AirportTo</td>
+                        <td data-translate="airportTo-description">Code of the destination airport of the flight</td>
                     </tr>
                     <tr>
-                        <td data-translate="airportFrom">DayOfWeek</td>
-                        <td data-translate="airportTo">representa em que dia da semana o voo foi realizado (1 a 7).</td>
+                        <td data-translate="dayOfWeek">DayOfWeek</td>
+                        <td data-translate="dayOfWeek-description">Represents the day of the week the flight was performed (1 to 7)</td>
                     </tr>
                     <tr>
-                        <td data-translate="airportFrom">Time</td>
-                        <td data-translate="airportTo"> Indica em minutos o horário programada para a decolagem ou pouso.</td>
+                        <td data-translate="time">Time</td>
+                        <td data-translate="time-description">Indicates in minutes the scheduled time for takeoff or landing</td>
                     </tr>
                     <tr>
-                        <td data-translate="dayOfWeek">Length</td>
-                        <td data-translate="time">Refere-se ao tempo total que o voo levou, em minutos.</td>
+                        <td data-translate="length">Length</td>
+                        <td data-translate="length-description">Refers to the total time the flight took, in minutes</td>
                     </tr>
                     <tr>
-                        <td data-translate="length">Delay</td>
-                        <td data-translate="delay">Se houve ou não atraso (0 = sem atraso, 1 = com atraso)</td>
+                        <td data-translate="delay">Delay</td>
+                        <td data-translate="delay-description">Whether there was a delay or not (0 = no delay, 1 = delayed)</td>
                     </tr>
                 </tbody>
             </table>
             <div class="buttons">
-                <button data-translate="num-linhas-colunas">Base de dados</button>
-                <button data-translate="estrutura-dataframe">Estrutura dos dados</button>
-                <button data-translate="estatisticas-colunas">Estatisticas das colunas</button>
-                <button data-translate="balanceamento-classes">Balanceamento da base de dados</button>
-                <button data-translate="mostrar-tratamento-dados">Resumo Tratamento de dados</button>
+                <button data-translate="num-rows-columns">Number of Rows and Columns</button>
+                <button data-translate="dataframe-structure">Dataframe Structure</button>
+                <button data-translate="column-statistics">Column Statistics</button>
+                <button data-translate="class-balancing">Class Balancing</button>
+                <button data-translate="data-treatment-summary">Data Treatment Summary</button>
             </div>
             <div class="result"></div>
         </section>
-
     </main>
     <script src="../static/js/dark-mode.js"></script>
     <script src="../static/js/language-toggle.js"></script>

@@ -43,8 +43,8 @@ class TestRoutes(TestCase):
             'aeroporto-origem': 'ADQ',
             'aeroporto-destino': 'ABE',
             'dia-semana': 1,
-            'horario-voo': 10,
-            'duracao-voo': 120,
+            'horario-voo': "10:30",
+            'duracao-voo': "05:30",
             'aeronave': '1'
         })
         self.assertEqual(response.status_code, 302) 

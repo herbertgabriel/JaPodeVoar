@@ -124,3 +124,13 @@ body.dark-mode button:hover {
 body.dark-mode label, th{
     color: black;
 }
+.prediction-form button{
+    margin-top: 1rem;
+}
+
+.prediction-form input{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
