@@ -8,13 +8,13 @@ from flasgger import swag_from
 main = Blueprint('main', __name__)
 
 current_dir = os.getcwd()
-print(f"Diretório de trabalho atual: {current_dir}")
+# print(f"Diretório de trabalho atual: {current_dir}")
 
 csv_path = os.path.join(current_dir, 'data', 'dados_balanceados.csv')
 
 if os.path.exists(csv_path):
     dados = pd.read_csv(csv_path)
-    print(dados.head())
+    # print(dados.head())
 else:
     print(f"Arquivo não encontrado: {csv_path}")
 
