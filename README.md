@@ -98,10 +98,3 @@ O modelo utiliza as seguintes colunas na base de dados de voos:
 - **Length**: Tempo total que o voo levou, em minutos.
 - **Delay**: Indica se houve ou não atraso (0 = sem atraso, 1 = com atraso).
 
-## Autores
-
-- **Herbert Gabriel** 
-- **Everlyn Marques** 
-- **Laryssa Thaynna**
-- **Felipe Vinicius**  
-
